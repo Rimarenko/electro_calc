@@ -1,0 +1,36 @@
+using System;
+
+
+				
+public class Program
+{
+	public static void Main()
+	{
+		Console.WriteLine("¬ведите предыдущее показани€ день");
+		double d1=Convert.ToDouble(Console.ReadLine());
+		Console.WriteLine("¬ведите текущие показани€ день");
+		double d2=Convert.ToDouble(Console.ReadLine());
+		Console.WriteLine("¬ведите предыдущее показани€ ночь");
+		double n1=Convert.ToDouble(Console.ReadLine());
+		Console.WriteLine("¬ведите текущие показани€ ночь");
+		double n2=Convert.ToDouble(Console.ReadLine());
+		double d=d2-d1, n=n2-n1, o=d+n;
+		Console.WriteLine("ѕотребление по зонам, к¬т*ч                 " + d + "     "+ n);
+		Console.WriteLine("»того потреблено - " + o +" к¬т*ч");
+		double per=o/100;
+		//Console.WriteLine(per);
+		Console.WriteLine("ѕотреблено по зонам до 100 к¬т*ч            " + Math.Round(d/per, 2) +"     "+ Math.Round(n/per, 2));		
+		Console.WriteLine("ѕотреблено до по зонам свыше 100 к¬т*ч      " + Math.Round(d-(d/per), 2)+"     "+Math.Round(n-(n/per), 2));	
+		double dg100=d/per*0.9, ng100=n/per*0.45;
+		Console.WriteLine("ќплата за потребление до 100 к¬т*ч, грн     " + Math.Round(dg100, 2)+"     "+Math.Round(ng100, 2));		
+		double dg101=(d-(d/per))*1.68, ng101=(n-(n/per))*0.84;
+		Console.WriteLine("ќплата за потребление свыше 100 к¬т*ч, грн  " + Math.Round(dg101, 2)+"     "+Math.Round(ng101, 2));		
+		double og=dg100+ng100+dg101+ng101;
+		Console.WriteLine("»того к оплате, грн.              " + Math.Round(og, 2));
+		double oldg=(o-100)*1.68 + 90, eco=oldg-og;
+		Console.WriteLine("ѕри обычном счетчике оплата, грн  " + Math.Round(oldg, 2));
+		Console.WriteLine("¬ы сэкономили в этом мес€це, грн  " + Math.Round(eco, 2));
+
+
+	}
+}
