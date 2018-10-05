@@ -6,31 +6,26 @@ public class Program
 {
 	public static void Main()
 	{
-		Console.WriteLine("Введите предыдущее показания день");
+		Console.WriteLine("Р’РІРµРґРёС‚Рµ РїСЂРµРґС‹РґСѓС‰РµРµ РїРѕРєР°Р·Р°РЅРёСЏ РґРµРЅСЊ");
 		double d1=Convert.ToDouble(Console.ReadLine());
-		Console.WriteLine("Введите текущие показания день");
+		Console.WriteLine("Р’РІРµРґРёС‚Рµ С‚РµРєСѓС‰РёРµ РїРѕРєР°Р·Р°РЅРёСЏ РґРµРЅСЊ");
 		double d2=Convert.ToDouble(Console.ReadLine());
-		Console.WriteLine("Введите предыдущее показания ночь");
+		Console.WriteLine("Р’РІРµРґРёС‚Рµ РїСЂРµРґС‹РґСѓС‰РµРµ РїРѕРєР°Р·Р°РЅРёСЏ РЅРѕС‡СЊ");
 		double n1=Convert.ToDouble(Console.ReadLine());
-		Console.WriteLine("Введите текущие показания ночь");
+		Console.WriteLine("Р’РІРµРґРёС‚Рµ С‚РµРєСѓС‰РёРµ РїРѕРєР°Р·Р°РЅРёСЏ РЅРѕС‡СЊ");
 		double n2=Convert.ToDouble(Console.ReadLine());
 		double d=d2-d1, n=n2-n1, o=d+n;
-		Console.WriteLine("Потребление по зонам, кВт*ч                 " + d + "     "+ n);
-		Console.WriteLine("Итого потреблено - " + o +" кВт*ч");
+		Console.WriteLine("РџРѕС‚СЂРµР±Р»РµРЅРёРµ РїРѕ Р·РѕРЅР°Рј, РєР’С‚*С‡                 " + d + "     "+ n);
+		Console.WriteLine("РС‚РѕРіРѕ РїРѕС‚СЂРµР±Р»РµРЅРѕ - " + o +" РєР’С‚*С‡");
 		double per=o/100;
 		//Console.WriteLine(per);
-		Console.WriteLine("Потреблено по зонам до 100 кВт*ч            " + Math.Round(d/per, 2) +"     "+ Math.Round(n/per, 2));		
-		Console.WriteLine("Потреблено до по зонам свыше 100 кВт*ч      " + Math.Round(d-(d/per), 2)+"     "+Math.Round(n-(n/per), 2));	
+		Console.WriteLine("РџРѕС‚СЂРµР±Р»РµРЅРѕ РїРѕ Р·РѕРЅР°Рј РґРѕ 100 РєР’С‚*С‡            " + Math.Round(d/per, 2) +"     "+ Math.Round(n/per, 2));		Console.WriteLine("РџРѕС‚СЂРµР±Р»РµРЅРѕ РґРѕ РїРѕ Р·РѕРЅР°Рј СЃРІС‹С€Рµ 100 РєР’С‚*С‡      " + Math.Round(d-(d/per), 2)+"     "+Math.Round(n-(n/per), 2));	
 		double dg100=d/per*0.9, ng100=n/per*0.45;
-		Console.WriteLine("Оплата за потребление до 100 кВт*ч, грн     " + Math.Round(dg100, 2)+"     "+Math.Round(ng100, 2));		
-		double dg101=(d-(d/per))*1.68, ng101=(n-(n/per))*0.84;
-		Console.WriteLine("Оплата за потребление свыше 100 кВт*ч, грн  " + Math.Round(dg101, 2)+"     "+Math.Round(ng101, 2));		
-		double og=dg100+ng100+dg101+ng101;
-		Console.WriteLine("Итого к оплате, грн.              " + Math.Round(og, 2));
+		Console.WriteLine("РћРїР»Р°С‚Р° Р·Р° РїРѕС‚СЂРµР±Р»РµРЅРёРµ РґРѕ 100 РєР’С‚*С‡, РіСЂРЅ     " + Math.Round(dg100, 2)+"     "+Math.Round(ng100, 2));			double dg101=(d-(d/per))*1.68, ng101=(n-(n/per))*0.84;
+		Console.WriteLine("РћРїР»Р°С‚Р° Р·Р° РїРѕС‚СЂРµР±Р»РµРЅРёРµ СЃРІС‹С€Рµ 100 РєР’С‚*С‡, РіСЂРЅ  " + Math.Round(dg101, 2)+"     "+Math.Round(ng101, 2));			double og=dg100+ng100+dg101+ng101;
+		Console.WriteLine("РС‚РѕРіРѕ Рє РѕРїР»Р°С‚Рµ, РіСЂРЅ.              " + Math.Round(og, 2));
 		double oldg=(o-100)*1.68 + 90, eco=oldg-og;
-		Console.WriteLine("При обычном счетчике оплата, грн  " + Math.Round(oldg, 2));
-		Console.WriteLine("Вы сэкономили в этом месяце, грн  " + Math.Round(eco, 2));
-
-
+		Console.WriteLine("РџСЂРё РѕР±С‹С‡РЅРѕРј СЃС‡РµС‚С‡РёРєРµ РѕРїР»Р°С‚Р°, РіСЂРЅ  " + Math.Round(oldg, 2));
+		Console.WriteLine("Р’С‹ СЃСЌРєРѕРЅРѕРјРёР»Рё РІ СЌС‚РѕРј РјРµСЃСЏС†Рµ, РіСЂРЅ  " + Math.Round(eco, 2));
 	}
 }
